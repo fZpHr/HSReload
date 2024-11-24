@@ -1,39 +1,33 @@
-# HSReload - Auto Firewall Control
+# HSReload - Hearthstone Turn Skipper
 
-HSReload est une application Windows permettant de contrôler automatiquement les règles du pare-feu en fonction de la détection d'images à l'écran.
+HSReload est une application Windows qui vous permet de skip des tours sur Hearthstone en manipulant temporairement la connexion via le pare-feu Windows.
 
-## 🚀 Fonctionnalités
+## 🎮 Comment ça marche
 
-- **Détection d'images** : Surveillance automatique de l'écran pour détecter des images spécifiques
-- **Contrôle du pare-feu** : Gestion automatique des règles du pare-feu Windows
-- **Modes de fonctionnement** :
-  - Mode "Full Auto" pour une surveillance continue
-  - Mode "Semi Auto" pour des actions manuelles
-- **Interface graphique** intuitive avec Tkinter
-- **Système de logs** pour suivre les actions de l'application
-- **Musique d'ambiance** optionnelle en arrière-plan
+L'application crée et gère une règle de pare-feu qui, une fois activée, coupe brièvement la connexion d'Hearthstone pour skip le tour en cours. Plusieurs modes de fonctionnement sont disponibles selon vos besoins.
+
+## 🚀 Modes de fonctionnement
+
+- **Full Auto** : Skip automatiquement tous les tours
+- **Semi Auto** : Skip uniquement le prochain tour
+- **Manuel** : Activation/désactivation manuelle de la règle de pare-feu
 
 ## 📋 Prérequis
 
-- Python 3.x
-- Bibliothèques Python :
-  - tkinter
-  - pygame
-  - numpy
-  - opencv-python
-  - pyautogui
+- Windows 10/11
+- Python 3.x (si installation depuis les sources)
+- Hearthstone installé
+- Droits administrateur (pour la gestion du pare-feu)
 
 ## 💻 Installation
 
-### Version .exe (Recommandée pour Windows)
+### Version Simple (Recommandée)
+1. Téléchargez `HSReload.exe` depuis les releases
+2. Lancez en tant qu'administrateur
 
-1. Téléchargez `HSReload.exe` depuis la section releases
-2. Double-cliquez sur le fichier pour lancer l'application
-
-### Installation depuis les sources
-
+### Version Développeur
 ```bash
-# Cloner le repository
+# Cloner le projet
 git clone https://github.com/fZpHr/HSReload.git
 cd HSReload
 
@@ -41,29 +35,23 @@ cd HSReload
 pip install -r requirements.txt
 ```
 
-## 🔧 Utilisation
+## 🎯 Fonctionnalités
 
-### Lancement
+- **Interface simple** avec trois modes de skip
+- **Détection d'images** pour le fonctionnement automatique
+- **Gestion du pare-feu** Windows intégrée
+- **Logs** pour suivre les actions effectuées
+- **Musique** optionnelle en arrière-plan
 
-- **Version .exe** : Double-cliquez sur `HSReload.exe`
-- **Version Python** : Exécutez `python HS_Reload.py`
-
-### Modes de fonctionnement
-
-- **Full Auto** : Surveillance continue et actions automatiques
-- **Semi Auto** : Actions déclenchées manuellement sur détection
-- **Manuel** : Contrôle direct des règles du pare-feu
-
-### Paramètres disponibles
+## ⚙️ Options
 
 - Activation/désactivation des logs
 - Conservation des règles après fermeture
 - Contrôle de la musique d'ambiance
 
-## 🛠 Compilation en .exe
+## 🛠️ Compilation
 
-Pour créer votre propre version exécutable :
-
+Pour créer votre propre version :
 ```bash
 pyinstaller --onefile --noconsole \
   --add-data "combat.png;." \
@@ -72,8 +60,3 @@ pyinstaller --onefile --noconsole \
   --icon="icon.ico" \
   HS_Reload.py
 ```
-
-📄 Licence
-
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
-
